@@ -1,214 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* To'q neon rangli zamonaviy gradient fon */
+/* Orqa fon va nozik harakatlanuvchi atmosferaviy chiroqlar */
 .app-container {
   min-height: 100vh;
-  background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #0f172a 100%);
+  background: #09090b;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Shishasimon shaffof karta (Glassmorphism) */
+.bg-blur-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.circle-1 {
+  width: 400px;
+  height: 400px;
+  background: #6366f1;
+  top: -10%;
+  left: 10%;
+}
+
+.circle-2 {
+  width: 500px;
+  height: 500px;
+  background: #d946ef;
+  bottom: -10%;
+  right: 10%;
+}
+
+/* Premium Karta - Futuristik Shisha */
 .todo-card {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(20, 20, 25, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
+  border-radius: 32px;
   width: 100%;
-  max-width: 460px;
-  padding: 40px 30px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  max-width: 480px;
+  padding: 40px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  animation: fadeIn 0.6s ease-out;
 }
 
-/* Sarlavha qismi */
+/* Sarlavha Gradient Matn bilan */
 .todo-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .todo-header h2 {
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 28px;
+  font-weight: 800;
   letter-spacing: -0.5px;
 }
 
-/* Elementlar soni ko'rsatkichi (Neon) */
 .todo-count {
-  background: rgba(99, 102, 241, 0.2);
-  color: #6366f1;
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  padding: 2px 12px;
-  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(217, 70, 239, 0.15));
+  color: #c7d2fe;
+  border: 1px solid rgba(165, 180, 252, 0.2);
+  padding: 6px 14px;
+  border-radius: 100px;
   font-size: 13px;
   font-weight: 600;
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
 }
 
-/* Input va Tugma formasi */
+/* Form va Cyber-Input */
 .todo-form {
   display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 28px;
 }
 
-/* To'q fonli input */
 .todo-input {
   flex: 1;
-  padding: 15px 18px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
   font-size: 15px;
   color: #ffffff;
   outline: none;
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .todo-input::placeholder {
-  color: #64748b;
+  color: #52525b;
 }
 
 .todo-input:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.15);
-  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(99, 102, 241, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
 }
 
-/* Neon effektli tugma */
+/* Silliq Animatsiyali Tugma */
 .todo-btn {
-  background: #6366f1;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
   color: white;
   border: none;
-  padding: 0 22px;
-  border-radius: 14px;
+  padding: 0 24px;
+  border-radius: 16px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+  display: flex;
+  align-items: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
-.todo-btn:hover {
-  background: #4f46e5;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+.todo-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+  background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
 }
 
-/* Ro'yxat elementlari */
+.todo-btn:disabled {
+  background: rgba(255, 255, 255, 0.05);
+  color: #52525b;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Ro'yxat */
 .todo-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
-/* Har bir qator (Meva) dizayni */
+/* Cyber Meva Qatorlari */
 .todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  padding: 16px 20px;
-  border-radius: 16px;
-  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 18px 22px;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideUp 0.4s ease-out;
 }
 
 .todo-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
-  transform: scale(1.01);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .todo-label {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   cursor: pointer;
   width: 100%;
 }
 
-/* Dumaloq Neon Checkbox */
+/* To'liq Custom Animatsiyali Checkbox (Yangi daraja) */
+.checkbox-wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
 .todo-checkbox {
-  appearance: none;
-  width: 22px;
-  height: 22px;
-  border: 2px solid #475569;
-  border-radius: 50%; /* Dumaloq shaklda */
-  outline: none;
+  position: absolute;
+  opacity: 0;
   cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  transition: all 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
 }
 
-.todo-checkbox:checked {
-  background-color: #10b981; /* Bajarilganda yashil neon */
-  border-color: #10b981;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
-}
-
-.todo-checkbox:checked::before {
-  content: '✓';
+.custom-checkmark svg {
+  width: 14px;
+  height: 14px;
   color: white;
-  font-size: 12px;
-  font-weight: bold;
+  transform: scale(0) rotate(-45deg);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Matn stili */
+.todo-checkbox:checked ~ .custom-checkmark {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+.todo-checkbox:checked ~ .custom-checkmark svg {
+  transform: scale(1) rotate(0deg);
+}
+
+/* Matn va Chiroyli O'chish effekti */
 .todo-text {
   font-size: 16px;
-  color: #e2e8f0;
+  color: #e4e4e7;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-/* Bajarilgan element o'chgan holati */
-.todo-text.completed {
-  text-decoration: line-through;
-  color: #475569;
+.is-completed .todo-text {
+  color: #71717a;
 }
 
-/* O'chirish (Vrn) tugmasi - minimalist dizayn */
+.is-completed .todo-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: #71717a;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: strikeThrough 0.3s forwards ease-out;
+}
+
+/* O'chirish Tugmasi */
 .delete-btn {
   background: transparent;
   border: none;
-  padding: 6px;
-  border-radius: 8px;
+  padding: 8px;
+  border-radius: 12px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  opacity: 0.5;
+  opacity: 0; /* Faqat sichqoncha borganda ko'rinadi */
+  transform: scale(0.9);
 }
 
 .todo-item:hover .delete-btn {
-  opacity: 1; /* Faqat qator ustiga borgandagina ko'rinadi */
+  opacity: 1;
+  transform: scale(1);
 }
 
 .delete-btn:hover {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(239, 68, 68, 0.15);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.1);
 }
 
 .delete-btn:hover .trash-icon {
-  stroke: #ef4444; /* Sichqoncha borganda qizil yonadi */
+  stroke: #f87171;
 }
 
 .trash-icon {
   width: 18px;
   height: 18px;
-  stroke: #94a3b8;
-  transition: stroke 0.2s;
+  stroke: #a1a1aa;
+  transition: all 0.2s;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #52525b;
+  padding: 20px 0;
+  font-size: 15px;
+}
+
+/* CSS Animatsiyalar */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes strikeThrough {
+  to { transform: scaleX(1); }
 }
